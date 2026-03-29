@@ -29,6 +29,7 @@ def video_to_summary(
             model_name=summarizer_model_name
         )
 
+    # Remove temporary audio
     if os.path.exists(audio_path):
         os.remove(audio_path)
 
