@@ -9,7 +9,7 @@ def video_to_summary(
         summarizer_model_name: str = "facebook/bart-large-cnn",
         use_chunking: bool = False
 ) -> str:
-    
+
     audio_path = "temp_audio.wav"
     extract_audio(video_path, audio_path)
 
@@ -28,18 +28,8 @@ def video_to_summary(
             transcript,
             model_name=summarizer_model_name
         )
-    
+
     if os.path.exists(audio_path):
         os.remove(audio_path)
 
     return final_summary
-
-    video_file = "example_video.mp4"
-    summary = video_to_summary(
-        video_file,
-        model_size="base",
-        summarizer_model_name="facebook/bart-large-cnn",
-        use_chunking=True
-    )
-    print("FINAL SUMMARY:")
-    print(summary_output)
