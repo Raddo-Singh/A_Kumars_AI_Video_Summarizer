@@ -1,5 +1,5 @@
 streamlit
 transformers
-openai-whisper
 torch
+openai-whisper
 ffmpeg-python
