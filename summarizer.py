@@ -6,6 +6,15 @@ def summarize_text(
         max_length: int = 150,
         min_length: int = 30,
 ) -> str:
-    summarizer = pipeline("summarization", model=model_name)
-    summary = summarizer(text, max_length=max_length, min_length=min_length, do_sample=False)
+    """Summarize text using HuggingFace transformers"""
+    summarizer = pipeline(
+        "summarization",
+        model=model_name
+    )
+    summary = summarizer(
+        text,
+        max_length=max_length,
+        min_length=min_length,
+        do_sample=False
+    )
     return summary[0]["summary_text"]
